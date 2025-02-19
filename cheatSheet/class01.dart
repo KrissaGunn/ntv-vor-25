@@ -1,4 +1,6 @@
 import 'package:ntv_vor_25/methods.dart';
+import 'dart:io';
+import 'dart:convert';
 void main(List<String> arguments) {
   /*
     0. Create a personal message. Use a variable to represent a person's name, and print a
@@ -42,4 +44,68 @@ void main(List<String> arguments) {
   /*
   Bónus task calculate the age from the SSN.
    */
+
+
+
+  String Name = "Gunnar";
+  print("Halló $Name, hvað segir þú gott í dag?");
+
+
+
+  String Text1 = "'If you can dream it, you can do it.'";
+  print("Walt Disney once said: $Text1");
+
+
+
+  String Text2 = "Hérna eru skilaboð fyrir verkefnið sem ég þarf svo að breyta";
+  print(Text2);
+  String FixText2 = Text2.replaceAll("þarf svo", "er búin");
+  print(FixText2);
+
+
+  String fixNureseryRhyme = NureseryRyhme.replaceAll(" ", "");
+  print(fixNureseryRhyme);
+
+
+
+  print("Halló, hvað heitir þú fullu nafni?");
+  String fullName = stdin.readLineSync(encoding: utf8).toString();
+  print(fullName.toUpperCase());
+  List<String> names = fullName.split(" ");
+  String firstName = names[0];
+  String lastName = names[1];
+  String fixName = (firstName.replaceAll("$firstName", "Kristjana"));
+  print("$fixName $lastName");
+  print(names[0].substring(0).toUpperCase().substring(1,4).toLowerCase());
+  print(names[1].substring(0).toUpperCase().substring(1,10).toLowerCase());
+
+
+
+  print(SSN1);
+  String fixSSN1 = SSN1.replaceAll("-", "");
+  int ssn1Length = fixSSN1.length;
+  print(ssn1Length);
+
+  print(SSN2);
+  String fixSSN2 = SSN2.replaceAll(" ", "");
+  int ssn2Length = fixSSN2.length;
+  print(ssn2Length);
+
+  print(SSN3);
+  String fixSSN3 = SSN3.replaceAll(" ", "");
+  int ssn3Length = fixSSN3.length;
+  print(ssn3Length);
+
+
+
+
+
+
+
+
+
+
+
+
 }
+

@@ -13,6 +13,9 @@ void main(List<String> arguments){
   int number2 = 3;
   double results2 = number1 / number2;
   print(results2.toStringAsFixed(3));
+  //int er bara með heilar tölur
+  //double er notað þegar talan er ekki heil (með kommu)
+  //toStringAsFixed er hversu margir aukastafir koma eftir kommuna
 
 
   print("Hæ hvað heitir þú?");

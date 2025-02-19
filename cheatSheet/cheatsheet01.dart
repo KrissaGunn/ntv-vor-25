@@ -6,6 +6,9 @@ void main(List<String> arguments) {
   String fullName = firstName + "" + Lastname;
   print("Hi $fullName");
 
+  int nameLength = fullName.length;
+  print(nameLength);
+
   String SSN = "170490-2749";
   String fixSSN = SSN.replaceAll("-", "");
   //replaceALL er notað til þess að taka í burtu fyrri hlutan ss"-"
@@ -13,5 +16,9 @@ void main(List<String> arguments) {
   print(ssnLength);
   String message = "Hello World";
   String fixMessage = message.replaceAll("World", "NTV");
-  pring(fixmessage.toUpperCase());
+  print(fixmessage.toUpperCase());
+
+  String birthDate = SSN.substring(0,6);
+  print(birthDate);
+  
 }
