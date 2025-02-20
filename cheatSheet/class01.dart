@@ -53,7 +53,8 @@ void main(List<String> arguments) {
 
 
   String Text1 = "'If you can dream it, you can do it.'";
-  print("Walt Disney once said: $Text1");
+  String author = "Walt Disney";
+  print("$author once said: $Text1");
 
 
 
@@ -76,25 +77,27 @@ void main(List<String> arguments) {
   String lastName = names[1];
   String fixName = (firstName.replaceAll("$firstName", "Kristjana"));
   print("$fixName $lastName");
-  print(names[0].substring(0).toUpperCase().substring(1,4).toLowerCase());
-  print(names[1].substring(0).toUpperCase().substring(1,10).toLowerCase());
+
+
+  print(firstName.substring(0,1).toUpperCase() + firstName.substring(1,firstName.length).toLowerCase());
+  print(lastName.substring(0,1).toUpperCase() + lastName.substring(1,lastName.length).toLowerCase());
 
 
 
   print(SSN1);
   String fixSSN1 = SSN1.replaceAll("-", "");
   int ssn1Length = fixSSN1.length;
-  print(ssn1Length);
+  print(fixSSN1);
 
   print(SSN2);
   String fixSSN2 = SSN2.replaceAll(" ", "");
   int ssn2Length = fixSSN2.length;
-  print(ssn2Length);
+  print(fixSSN2);
 
   print(SSN3);
   String fixSSN3 = SSN3.replaceAll(" ", "");
   int ssn3Length = fixSSN3.length;
-  print(ssn3Length);
+  print(fixSSN3);
 
 
 
