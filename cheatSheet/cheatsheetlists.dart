@@ -51,6 +51,9 @@ void main(){
   nums.removeRange(2, 6);
   print(nums);
 
+  //remove the last item
+  nums.removeLast();
+  print(myList);
 
 
 

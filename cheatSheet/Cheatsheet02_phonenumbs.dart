@@ -25,8 +25,8 @@ void main(List<String> arguments) {
       phoneNumber = phoneNumber.replaceAll(" ", "");
     }
     print("$phoneNumber, ég mun ná að breyta þessu ef það eru bara tölusafir í $phoneNumber");
-    int? phoneNumberStoage = int.tryParse(phoneNumber);
-    if (phoneNumber.length == 7 && phoneNumberStoage is int) {
+    int? phoneNumberStorage = int.tryParse(phoneNumber);
+    if (phoneNumber.length == 7 && phoneNumberStorage is int) {
       print("Okei næs, ég er með rétta lengd og þetta eru bara tölustafir.");
       if(phoneNumber[0] != "1") {
         print("Þetta símanúmer er valid");
