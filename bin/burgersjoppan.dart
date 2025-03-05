@@ -33,6 +33,7 @@ void main() {
     String? user = stdin.readLineSync(encoding: utf8).toString();
 
     if (user.toLowerCase() == 'exit') {
+      print('Heildarverð: $totalPrice kr.');
       print('Takk fyrir að panta hjá okkur \nVerði þér að góðu');
       burgers = false;
     } else {
@@ -80,9 +81,8 @@ void main() {
           print('Engin vara til að fjalægja');
         }
       }
-      {
+
         print('Pöntunin þín: $pontun');
-      }
       print('Heildarverð: $totalPrice kr.');
     }
   }
