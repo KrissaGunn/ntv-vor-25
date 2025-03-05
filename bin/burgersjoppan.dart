@@ -1,12 +1,14 @@
 import 'dart:convert';
 import 'dart:io';
-import'dart:math';
+import 'dart:math';
+
 
 void main() {
   List borgarar = ['Ostborgari', 'Beikonborgari', 'Barnaborgari',
     'Kjúklingaborgari', 'franskar', 'sætkartöflufranskar'];
   List price = [1600, 1900, 1200, 1900, 900, 900];
   List pontun = [];
+  num totalPrice = 0;
   List<List<dynamic>> menu = [
     ['Ostborgari', 1600],
     ['Beikonborgari', 1900],
@@ -22,7 +24,7 @@ void main() {
         (i + 1).toString() + '. ' + menu[i][0] + ' - ' + menu[i][1].toString() +
             ' kr.');
   }
-  int total = int.parse();
+
   bool burgers = true;
   print('Til að hætta í pöntunarferlinu skrifaru "exit"');
   print('Til að taka vöru úr pöntun skrifaru "0"');
@@ -34,42 +36,55 @@ void main() {
       print('Takk fyrir að panta hjá okkur \nVerði þér að góðu');
       burgers = false;
     } else {
-
       if (user.contains('1')) {
-        pontun.add(menu[0]);
-        print('Ostborgara bætt á pöntun');
+        pontun.add(menu[0][0]);
+        totalPrice += (menu[0][1]);
+        print('${menu[0][0]} bætt á pöntun');
       }
 
       if (user.contains('2')) {
-        pontun.add(menu[1]);
-        print('Beikonborgara bætt á pöntun');
+        pontun.add(menu[1][0]);
+        totalPrice += (menu[1][1]);
+        print('${menu[1][0]} bætt á pöntun');
       }
 
       if (user.contains('3')) {
-        pontun.add(menu[2]);
-        print('Barnaborgara bætt á pöntun');
+        pontun.add(menu[2][0]);
+        totalPrice += (menu[2][1]);
+        print('${menu[2][0]} bætt á pöntun');
       }
 
       if (user.contains('4')) {
-        pontun.add(menu[3]);
-        print('Kjúklingaborgara bætt á pöntun');
+        pontun.add(menu[3][0]);
+        totalPrice += (menu[3][1]);
+        print('${menu[3][0]} bætt á pöntun');
       }
 
       if (user.contains('5')) {
-        pontun.add(menu[4]);
-        print('Frönskum bætt á pöntun');
+        pontun.add(menu[4][0]);
+        totalPrice += (menu[4][1]);
+        print('${menu[4][0]} bætt á pöntun');
       }
 
       if (user.contains('6')) {
-        pontun.add(menu[5]);
-        print('Sætkartöflufrönskum bætt á pöntun');
+        pontun.add(menu[5][0]);
+        totalPrice += menu[5][1];
+        print('${menu[5][0]} bætt á pöntun');
       }
-      if(user.contains('0')) {
-        pontun.removeLast();
-        print('vara fjarlægð úr pöntun');
+      if (user.contains('0')) {
+        if (pontun.isNotEmpty) {
+          String removedItem = pontun.removeLast();
+          totalPrice -= menu.firstWhere((item) => item[0] == removedItem)[1];
+          print('$removedItem fjarlægt úr pöntun');
+        } else {
+          print('Engin vara til að fjalægja');
+        }
       }
-      print(pontun);
+      {
+        print('Pöntunin þín: $pontun');
       }
+      print('Heildarverð: $totalPrice kr.');
     }
   }
+}
 
